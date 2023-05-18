@@ -1,14 +1,14 @@
 CREATE DOMAIN tipo_cita_valores AS character varying(50) 
-    CHECK (VALUE IN (presencial, online, a_domicilio));
+    CHECK (VALUE IN ('presencial', 'online', 'a_domicilio'));
 
 CREATE DOMAIN modalidad_cita_valores AS character varying(50)
-	CHECK (VALUE IN (consulta_general, vacunacion, cirugia, analitica, peluqueria));
+	CHECK (VALUE IN ('consulta_general', 'vacunacion', 'cirugia', 'analitica', 'peluqueria'));
 
 CREATE DOMAIN tipo_producto_valores AS character varying(50)
-	CHECK (VALUE IN (accesorio, comida, medicamento, vacuna, peluqueria));
+	CHECK (VALUE IN ('accesorio', 'comida', 'medicamento', 'vacuna', 'peluqueria'));
 
 CREATE DOMAIN metodo_envio_valores AS character varying(50)
-	CHECK (VALUE IN (correo_electronico, sms));
+	CHECK (VALUE IN ('correo_electronico', 'sms'));
 
 CREATE TABLE mascota
 (
