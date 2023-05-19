@@ -1,7 +1,7 @@
-CREATE DOMAIN tipo_cita_valores AS character varying(50) 
+CREATE DOMAIN modalidad_cita_valores AS character varying(50) 
     CHECK (VALUE IN ('presencial', 'online', 'a_domicilio'));
 
-CREATE DOMAIN modalidad_cita_valores AS character varying(50)
+CREATE DOMAIN tipo_cita_valores AS character varying(50)
 	CHECK (VALUE IN ('consulta_general', 'vacunacion', 'cirugia', 'analitica', 'peluqueria'));
 
 CREATE DOMAIN tipo_producto_valores AS character varying(50)
@@ -38,7 +38,7 @@ CREATE TABLE clinica(
 
 CREATE TABLE cita(
   id_cita INT NOT NULL,
-  hora DATE NOT NULL,
+  hora TIME NOT NULL,
   fecha DATE NOT NULL,
   id_clinica INT NOT NULL,
   num_chip INT NOT NULL,

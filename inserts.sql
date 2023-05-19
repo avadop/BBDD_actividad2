@@ -18,7 +18,11 @@ INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (
 INSERT INTO clinica(id_clinica) VALUES (123589746)
 
 -- Inserts tabla cita
-INSERT INTO cita(id_cita, hora, fecha, id_clinica, num_chip, modalidad, tipo_cita) VALUES (1, )
+INSERT INTO cita(id_cita, hora, fecha, id_clinica, num_chip, modalidad, tipo_cita) VALUES (1, '10:00', '06/03/2023', 123589746, 1234567, 'online', 'consulta_general')
+INSERT INTO cita(id_cita, hora, fecha, id_clinica, num_chip, modalidad, tipo_cita) VALUES (2, '16:30', '05/29/2023', 123589746, 7896541, 'presencial', 'vacunacion')
+INSERT INTO cita(id_cita, hora, fecha, id_clinica, num_chip, modalidad, tipo_cita) VALUES (3, '12:00', '06/01/2023', 123589746, 1122334, 'a_domicilio', 'peluqueria')
+INSERT INTO cita(id_cita, hora, fecha, id_clinica, num_chip, modalidad, tipo_cita) VALUES (4, '10:00', '05/25/2023', 123589746, 7755689, 'presencial', 'analitica')
+INSERT INTO cita(id_cita, hora, fecha, id_clinica, num_chip, modalidad, tipo_cita) VALUES (5, '12:00', '06/06/2023', 123589746, 7755689, 'presencial', 'consulta_general')
 
 -- Inserts tabla producto
 -- Productos de comida
