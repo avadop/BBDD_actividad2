@@ -1,0 +1,65 @@
+
+cliente(dni, nombre, apellidos, correo_electronico, direccion, contrasenya)
+PK: {dni}
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
+
+mascota(num_chip, nombre_mascota, edad, sexo, especie, dni)
+PK: {num_chip}
+FK: {mascota.dni es clave ajena a cliente.deni} 
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
+
+clinica(id_clinica)
+PK: {id_clinica}
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
+
+cita(id_cita, hora, fecha, id_clinica, num_chip, modalidad, tipo_cita)
+PK: {id_cita}
+FK: {cita.id_clinica es clave ajena a clinica.id_clinica} 
+FK: {cita.num_chip es clave ajena a mascota.num_chip} 
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
+
+producto(id_producto, nombre_producto, marca, imagen, descripcion, ficha_tecnica, precio, cantidad_disponible, tipo_producto)
+PK: {id_producto} 
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
+
+alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto, modalidad, tipo_cita)
+PK: {id_alerta}
+FK: {alerta.id_producto es clave ajena a producto.id_producto} 
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
+
+
+recordatorio(id_recordatorio, fecha_inicio, periocidad, motivo, metodo_envio, num_chip, id_clinica)
+PK: {id_recordatorio}
+FK: {recordatorio.num_chip es clave ajena a mascota.num_chip} 
+FK: {recordatorio.id_clinica es clave ajena a clinica.id_clinica} 
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
+
+compra(id_producto, dni, fecha_compra)
+PK: {id_producto, dni}
+FK: {compra.id_producto es clave ajena a producto.id_producto} 
+FK: {compra.dni es clave ajena a cliente.dni} 
+Acepta nulos: no
+Borrado: propagar
+Modificación: propagar
+
