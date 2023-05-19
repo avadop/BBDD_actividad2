@@ -31,7 +31,7 @@ producto(id_producto, nombre_producto, marca, imagen, descripcion, ficha_tecnica
 PK: {id_producto} 
 
 
-alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto, modalidad, tipo_cita)
+alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto)
 PK: {id_alerta}
 FK: {alerta.id_producto es clave ajena a producto.id_producto} 
 Acepta nulos: no
@@ -39,7 +39,7 @@ Borrado: propagar
 Modificación: propagar
 
 
-recordatorio(id_recordatorio, fecha_inicio, periocidad, motivo, metodo_envio, num_chip, id_clinica)
+recordatorio(id_recordatorio, fecha_inicio, peridicidad, motivo, metodo_envio, num_chip, id_clinica)
 PK: {id_recordatorio}
 FK: {recordatorio.num_chip es clave ajena a mascota.num_chip} 
 Acepta nulos: no
@@ -54,6 +54,9 @@ Modificación: restringir
 compra(id_producto, dni, fecha_compra)
 PK: {id_producto, dni}
 FK: {compra.id_producto es clave ajena a producto.id_producto} 
+Acepta nulos: si
+Borrado: set null
+Modificación: propagar
 FK: {compra.dni es clave ajena a cliente.dni} 
 Acepta nulos: no
 Borrado: propagar
