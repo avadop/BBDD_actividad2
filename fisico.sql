@@ -28,7 +28,9 @@ CREATE TABLE mascota(
   especie VARCHAR NOT NULL,
   dni VARCHAR(9) NOT NULL, 
   CONSTRAINT cp_mascota PRIMARY KEY (num_chip),
-  CONSTRAINT caj_cliente FOREIGN KEY (dni) REFERENCES cliente(dni)
+  CONSTRAINT caj_cliente FOREIGN KEY (dni) REFERENCES cliente(dni) 
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
 );
 
 CREATE TABLE clinica( 
@@ -45,8 +47,12 @@ CREATE TABLE cita(
   modalidad modalidad_cita_valores NOT NULL,
   tipo_cita tipo_cita_valores NOT NULL,
   CONSTRAINT cp_cita PRIMARY KEY (id_cita),
-  CONSTRAINT caj_clinica_cita FOREIGN KEY (id_clinica) REFERENCES clinica(id_clinica),
+  CONSTRAINT caj_clinica_cita FOREIGN KEY (id_clinica) REFERENCES clinica(id_clinica)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
   CONSTRAINT caj_mascota_cita FOREIGN KEY (num_chip) REFERENCES mascota(num_chip)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
 );
 
 CREATE TABLE producto(
@@ -70,6 +76,8 @@ CREATE TABLE alerta(
   id_producto INT NOT NULL,
   PRIMARY KEY (id_alerta),
   FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
 );
 
 CREATE TABLE recordatorio(
@@ -81,8 +89,12 @@ CREATE TABLE recordatorio(
   num_chip INT NOT NULL,
   id_clinica INT NOT NULL,
   CONSTRAINT cp_recordatorio PRIMARY KEY (id_recordatorio),
-  CONSTRAINT caj_mascota_recordatorio FOREIGN KEY (num_chip) REFERENCES mascota(num_chip),
+  CONSTRAINT caj_mascota_recordatorio FOREIGN KEY (num_chip) REFERENCES mascota(num_chip)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
   CONSTRAINT caj_clinica_recordatorio FOREIGN KEY (id_clinica) REFERENCES clinica(id_clinica)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
 );
 
 CREATE TABLE compra(
@@ -90,6 +102,10 @@ CREATE TABLE compra(
   id_producto INT NOT NULL,
   dni VARCHAR(9) NOT NULL,
   CONSTRAINT cp_compra PRIMARY KEY (dni, id_producto),
-  CONSTRAINT caj_cliente_compra FOREIGN KEY (dni) REFERENCES cliente(dni),
+  CONSTRAINT caj_cliente_compra FOREIGN KEY (dni) REFERENCES cliente(dni)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE, 
   CONSTRAINT caj_producto_compra FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
 );
