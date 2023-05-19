@@ -17,6 +17,7 @@ CREATE TABLE cliente(
   nombre VARCHAR NOT NULL,
   apellidos VARCHAR NOT NULL,
   contrasenya VARCHAR NOT NULL,
+  telefono INT NOT NULL,
   CONSTRAINT cp_cliente PRIMARY KEY (dni), 
 );
 
