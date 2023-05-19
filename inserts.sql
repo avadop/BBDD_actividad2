@@ -51,12 +51,22 @@ INSERT INTO producto(id_producto, nombre_producto, marca, imagen, descripcion, f
 INSERT INTO producto(id_producto, nombre_producto, marca, imagen, descripcion, ficha_tecnica, precio, cantidad_disponible, tipo_producto) VALUES (14, 'Champú perro', 'Kiwoko', 'champu.png', 'Champú perros olor natural.', 'Champú hipoalergénico, apto para todo tipo de pieles', 12, 5, 'peluqueria')
 
 -- Inserts alertas
-cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (1, 'Bajo stock', 10, '01/25/2023', 1);")
-cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (2, 'Bajo stock', 10, '08/06/2022', 4);")
-cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (3, 'Bajo stock', 10, '02/22/2023', 11);")
-cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (4, 'Bajo stock', 10, '05/13/2023', 10);")
-
+INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (1, 'Bajo stock', 10, '01/25/2023', 1);
+INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (2, 'Bajo stock', 10, '08/06/2022', 4);
+INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (3, 'Bajo stock', 10, '02/22/2023', 11);
+INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (4, 'Bajo stock', 10, '05/13/2023', 10);
 
 -- Inserts recordatorios
+INSERT INTO recordatorio(id_recordatorio, fecha_inicio, periocidad, motivo, metodo_envio, num_chip, id_clinica) VALUES (1,'03/29/2022',365,'RENOVAR VACUNAS','sms',7896541,123589746)
+INSERT INTO recordatorio(id_recordatorio, fecha_inicio, periocidad, motivo, metodo_envio, num_chip, id_clinica) VALUES (2,'02/28/2023',90,'DESPARASITAR','sms',1234567,123589746)
+INSERT INTO recordatorio(id_recordatorio, fecha_inicio, periocidad, motivo, metodo_envio, num_chip, id_clinica) VALUES (3,'08/01/2022',365,'RENOVAR VACUNAS','sms',4566981,123589746)
+INSERT INTO recordatorio(id_recordatorio, fecha_inicio, periocidad, motivo, metodo_envio, num_chip, id_clinica) VALUES (4,'10/19/2022',365,'RENOVAR VACUNAS','sms',6542893,123589746)
+INSERT INTO recordatorio(id_recordatorio, fecha_inicio, periocidad, motivo, metodo_envio, num_chip, id_clinica) VALUES (5,'10/05/2022',365,'RENOVAR VACUNAS','sms',6987354,123589746)
 
 -- Inserts compras
+INSERT INTO compra(fecha_compra, id_producto, dni) VALUES ('07/03/2023',13,'01189877H');
+INSERT INTO compra(fecha_compra, id_producto, dni) VALUES ('03/07/2023',1,'01189877H');
+INSERT INTO compra(fecha_compra, id_producto, dni) VALUES ('05/12/2023',6,'01189877H');
+INSERT INTO compra(fecha_compra, id_producto, dni) VALUES ('05/11/2023',5,'58236478A');
+INSERT INTO compra(fecha_compra, id_producto, dni) VALUES ('05/11/2023',2,'58236478A');
+INSERT INTO compra(fecha_compra, id_producto, dni) VALUES ('04/22/2023',7,'44556677G');
