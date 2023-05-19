@@ -49,3 +49,14 @@ INSERT INTO producto(id_producto, nombre_producto, marca, imagen, descripcion, f
 -- Productos peluquería
 INSERT INTO producto(id_producto, nombre_producto, marca, imagen, descripcion, ficha_tecnica, precio, cantidad_disponible, tipo_producto) VALUES (13, 'Cepillo', 'VIUpets', 'cepillo.png', 'Cepillo para gato', 'Puas pequeñas.', 6.99, 10, 'peluqueria')
 INSERT INTO producto(id_producto, nombre_producto, marca, imagen, descripcion, ficha_tecnica, precio, cantidad_disponible, tipo_producto) VALUES (14, 'Champú perro', 'Kiwoko', 'champu.png', 'Champú perros olor natural.', 'Champú hipoalergénico, apto para todo tipo de pieles', 12, 5, 'peluqueria')
+
+-- Inserts alertas
+cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (1, 'Bajo stock', 10, '01/25/2023', 1);")
+cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (2, 'Bajo stock', 10, '08/06/2022', 4);")
+cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (3, 'Bajo stock', 10, '02/22/2023', 11);")
+cursor.execute("INSERT INTO alerta(id_alerta, mensaje, stock_restante, fecha_alerta, id_producto) VALUES (4, 'Bajo stock', 10, '05/13/2023', 10);")
+
+
+-- Inserts recordatorios
+
+-- Inserts compras
