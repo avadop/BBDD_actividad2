@@ -6,13 +6,13 @@ INSERT INTO cliente(dni, correo_electronico, direccion, nombre, apellidos, contr
 INSERT INTO cliente(dni, correo_electronico, direccion, nombre, apellidos, contrasenya) VALUES ('58236478A', 'menganito@gmail.com', 'Navarra', 'menganito', 'Perez Almansa', 'menganito123!');
 
 -- Inserts tabla mascota
-INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (1234567, 'Darwin', 2, 'H', 'gato', '01189877H');
-INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (7896541, 'Coco', 2, 'M', 'gato', '01189877H');
-INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (6542893, 'Mau', 4, 'M', 'gato', '12345678Z');
-INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (4566981, 'Leo', 12, 'M', 'gato', '98745632C');
-INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (7755689, 'Aru', 3, 'H', 'gato', '98745632C');
-INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (1122334, 'Django', 8, 'M', 'perro', '58236478A');
-INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, dni) VALUES (6987354, 'Mango', 6, 'H', 'perro', '44556677G');
+INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, historial_clinico, dni) VALUES (1234567, 'Darwin', 2, 'H', 'gato','Rabia, trivalente y leucemia', ARRAY ['informe1.doc', 'resultado.doc', 'informe2.doc'],'castrado', '01189877H');
+INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, dni) VALUES (7896541, 'Coco', 2, 'M', 'gato','Rabia, trivalente y leucemia', ARRAY ['informe1.doc', 'resultado.doc', 'informe2.doc'], '01189877H');
+INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, dni) VALUES (6542893, 'Mau', 4, 'M', 'gato','Rabia, trivalente y leucemia', ARRAY ['informe1.doc', 'resultado.doc', 'informe2.doc'],'12345678Z');
+INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, dni) VALUES (4566981, 'Leo', 12, 'M', 'gato', 'Rabia, trivalente y leucemia', ARRAY ['informe1.doc', 'resultado.doc', 'informe2.doc'],'98745632C');
+INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, historial_clinico, dni) VALUES (7755689, 'Aru', 3, 'H', 'gato', 'Rabia, trivalente y leucemia', ARRAY ['resultado.doc', 'resultado2.doc'],'madre','98745632C');
+INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, historial_clinico, dni) VALUES (1122334, 'Django', 8, 'M', 'perro', 'Rabia y polivalente', ARRAY ['analitica.doc'],'viejito', '58236478A');
+INSERT INTO mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, historial_clinico, dni) VALUES (6987354, 'Mango', 6, 'H', 'perro', 'Rabia y polivalente', ARRAY ['informe.doc'],'castrado', '44556677G');
 
 -- Insert tabla clinica
 INSERT INTO clinica(id_clinica) VALUES (123589746)

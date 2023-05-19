@@ -3,7 +3,7 @@ cliente(dni, nombre, apellidos, correo_electronico, direccion, contrasenya)
 PK: {dni}
 
 
-mascota(num_chip, nombre_mascota, edad, sexo, especie, dni)
+mascota(num_chip, nombre_mascota, edad, sexo, especie, vacunas, informes_de_mascota, historial_clinico, dni)
 PK: {num_chip}
 FK: {mascota.dni es clave ajena a cliente.deni} 
 Acepta nulos: no

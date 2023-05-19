@@ -26,6 +26,9 @@ CREATE TABLE mascota(
   edad INT NOT NULL,
   sexo CHAR NOT NULL,
   especie VARCHAR NOT NULL,
+  vacunas VARCHAR NOT NULL,
+  informes_de_mascota VARCHAR[] NOT NULL,
+  historial_clinico VARCHAR,
   dni VARCHAR(9) NOT NULL, 
   CONSTRAINT cp_mascota PRIMARY KEY (num_chip),
   CONSTRAINT caj_cliente FOREIGN KEY (dni) REFERENCES cliente(dni) 
